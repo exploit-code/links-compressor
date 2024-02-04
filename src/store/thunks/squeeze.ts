@@ -12,8 +12,7 @@ export const squeezeThunk =
     const options = {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
-        accept: "application/json",
+        Accept: "application/json",
         Authorization: `Bearer ${getCookie("access_token")}`,
       },
       body: JSON.stringify(""),

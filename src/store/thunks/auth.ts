@@ -19,8 +19,8 @@ export const loginThunk =
     const options = {
       method: "POST",
       headers: {
+        Accept: "application/json",
         "Content-Type": "application/json",
-        accept: "application/json",
       },
       body: JSON.stringify({ username, password }),
     };

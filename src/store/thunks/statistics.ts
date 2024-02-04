@@ -10,11 +10,12 @@ import { ISqueeze } from "../types/squeeze";
 
 export const statisticsThunk = (): AppThunk<Promise<ISqueeze[] | void>> => (dispatch) => {
   dispatch(statisticsRequestAction());
+  console.log(`Bearer ${getCookie("access_token")}`);
 
   const options = {
     method: "GET",
     headers: {
-      accept: "application/json",
+      Accept: "application/json",
       Authorization: `Bearer ${getCookie("access_token")}`,
     },
   };
