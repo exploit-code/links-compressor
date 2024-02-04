@@ -1,0 +1,16 @@
+.home {
+  display: grid;
+  gap: 32px;
+  max-width: 768px;
+  margin: 0 auto;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}

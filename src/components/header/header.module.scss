@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+  min-height: 60px;
+
+  &__link {
+    color: var(--black);
+    text-decoration: none;
+
+    &_wrap {
+      background-color: var(--hsla);
+      padding: 8px 16px;
+      border-radius: var(--radius);
+    }
+
+    &_active {
+      color: var(--active);
+    }
+  }
+}
