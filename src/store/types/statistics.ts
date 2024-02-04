@@ -6,6 +6,7 @@ export interface IStatisticsState {
   loading: boolean;
   error: boolean;
   statistics_error_detail: string;
+  x_total_count: string;
 }
 
 export interface IUpgradeSqueeze extends ISqueeze {

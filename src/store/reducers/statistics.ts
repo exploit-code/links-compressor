@@ -1,12 +1,14 @@
 import { v4 as uuidv4 } from "uuid";
 import { STATISTICS_REQUEST, STATISTICS_SUCCESS, STATISTICS_ERROR } from "../constants/statistics";
 import { IStatisticsState, TStatisticsUnionAction } from "../types/statistics";
+import { getCookie } from "../../utils/cookies";
 
 const initialState: IStatisticsState = {
   statistics: [],
   loading: false,
   error: false,
   statistics_error_detail: "",
+  x_total_count: "",
 };
 
 export const statisticsReducer = (state = initialState, action: TStatisticsUnionAction) => {
@@ -29,6 +31,7 @@ export const statisticsReducer = (state = initialState, action: TStatisticsUnion
         statistics: [...upgradeStatistics],
         error: false,
         statistics_error_detail: "",
+        x_total_count: `${getCookie("x-total-count")}`,
       };
 
     case STATISTICS_ERROR:
