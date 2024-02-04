@@ -5,7 +5,15 @@ const initialState: ISqueezeState = {
   squeeze: [],
   loading: false,
   error: false,
-  squeeze_error_detail: "",
+  squeeze_error_detail: {
+    detail: [
+      {
+        loc: [],
+        msg: "",
+        type: "",
+      },
+    ],
+  },
 };
 
 export const squeezeReducer = (state = initialState, action: TSqueezeUnionActions) => {
@@ -21,7 +29,15 @@ export const squeezeReducer = (state = initialState, action: TSqueezeUnionAction
         ...state,
         loading: false,
         error: false,
-        squeeze_error_detail: "",
+        squeeze_error_detail: {
+          detail: [
+            {
+              loc: [],
+              msg: "",
+              type: "",
+            },
+          ],
+        },
         squeeze: [...state.squeeze, action.payload],
       };
 
@@ -30,7 +46,7 @@ export const squeezeReducer = (state = initialState, action: TSqueezeUnionAction
         ...state,
         loading: false,
         error: true,
-        squeeze_error_detail: action.payload.detail,
+        squeeze_error_detail: { ...action.payload },
       };
 
     default:

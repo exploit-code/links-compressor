@@ -1,17 +1,11 @@
+import { IErrorRequest, ISqueeze } from "../../models";
 import { SQUEEZY_REQUEST, SQUEEZY_SUCCESS, SQUEEZY_ERROR } from "../constants/squeeze";
-
-export interface ISqueeze {
-  id: number;
-  short: string;
-  target: string;
-  counter: number;
-}
 
 export interface ISqueezeState {
   squeeze: ISqueeze[];
   loading: boolean;
   error: boolean;
-  squeeze_error_detail: string;
+  squeeze_error_detail: IErrorRequest;
 }
 
 export interface ISqueezeRequestPayload {
@@ -33,7 +27,7 @@ export interface ISqueezeSuccessAction {
 
 export interface ISqueezeErrorAction {
   readonly type: typeof SQUEEZY_ERROR;
-  readonly payload: ISqueezeErrorResponse;
+  readonly payload: IErrorRequest;
 }
 
 export type TSqueezeUnionActions =

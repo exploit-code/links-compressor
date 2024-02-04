@@ -1,5 +1,5 @@
 import { STATISTICS_REQUEST, STATISTICS_SUCCESS, STATISTICS_ERROR } from "../constants/statistics";
-import { ISqueeze } from "../types/squeeze";
+import { ISqueeze } from "../../models";
 import {
   IStatisticsRequestAction,
   IStatisticsSuccessAction,

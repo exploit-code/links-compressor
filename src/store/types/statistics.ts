@@ -1,5 +1,5 @@
 import { STATISTICS_REQUEST, STATISTICS_SUCCESS, STATISTICS_ERROR } from "../constants/statistics";
-import { ISqueeze } from "./squeeze";
+import { ISqueeze } from "../../models";
 
 export interface IStatisticsState {
   statistics: IUpgradeSqueeze[];

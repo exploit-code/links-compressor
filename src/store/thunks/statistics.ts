@@ -6,11 +6,10 @@ import {
   statisticsSuccessAction,
 } from "../actions/statistics";
 import { AppThunk } from "../types";
-import { ISqueeze } from "../types/squeeze";
+import { ISqueeze } from "../../models";
 
 export const statisticsThunk = (): AppThunk<Promise<ISqueeze[] | void>> => (dispatch) => {
   dispatch(statisticsRequestAction());
-  console.log(`Bearer ${getCookie("access_token")}`);
 
   const options = {
     method: "GET",

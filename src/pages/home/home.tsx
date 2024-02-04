@@ -11,7 +11,7 @@ import { statisticsThunk } from "../../store/thunks/statistics";
 export const HomePage = () => {
   const dispatch = useDispatch();
   const { value, setValue, handleChange } = useFormData({});
-  const { squeeze } = useSelector((store) => store.squeeze);
+  const { squeeze, error } = useSelector((store) => store.squeeze);
 
   const handleLinkSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -36,6 +36,8 @@ export const HomePage = () => {
           required={true}
         />
         <Button type={"submit"} text={"Compress"} />
+
+        {error && <p className={styles.home__error}>Error</p>}
       </form>
 
       <Table />

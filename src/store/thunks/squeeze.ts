@@ -2,7 +2,8 @@ import { request } from "../../utils/api";
 import { getCookie } from "../../utils/cookies";
 import { squeezeErrorAction, squeezeRequestAction, squeezeSuccessAction } from "../actions/squeeze";
 import { AppThunk } from "../types";
-import { ISqueeze, ISqueezeRequestPayload } from "../types/squeeze";
+import { ISqueezeRequestPayload } from "../types/squeeze";
+import { ISqueeze } from "../../models";
 
 export const squeezeThunk =
   ({ target }: ISqueezeRequestPayload): AppThunk<Promise<ISqueeze | void>> =>
