@@ -1,12 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { rootReducer } from "./reducers";
-import storage from "redux-persist/lib/storage";
+import storageSession from "redux-persist/lib/storage/session";
 import { persistReducer, persistStore } from "redux-persist";
 import thunk from "redux-thunk";
 
 const persistConfig = {
   key: "links",
-  storage,
+  whitelist: ["locale", "auth"],
+  storage: storageSession,
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
