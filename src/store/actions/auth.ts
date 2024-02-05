@@ -2,6 +2,7 @@ import {
   LOGIN_ERROR,
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
+  LOGOUT,
   SIGNUP_ERROR,
   SIGNUP_REQUEST,
   SIGNUP_SUCCESS,
@@ -15,6 +16,7 @@ import {
   ISignupRequestAction,
   ISignupSuccessAction,
   ILoginErrorResponse,
+  ILogoutAction,
 } from "../types/auth";
 
 export const loginRequestAction = (): ILoginRequestAction => ({
@@ -43,4 +45,8 @@ export const signupSuccessAction = (user: string): ISignupSuccessAction => ({
 export const signupErrorAction = (detail: ILoginErrorResponse): ISignupErrorAction => ({
   type: SIGNUP_ERROR,
   payload: detail,
+});
+
+export const logoutAction = (): ILogoutAction => ({
+  type: LOGOUT,
 });

@@ -19,4 +19,14 @@
       color: var(--blue);
     }
   }
+
+  &__button {
+    color: var(--black);
+    background-color: var(--hsla);
+    padding: 8px 16px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+  }
 }

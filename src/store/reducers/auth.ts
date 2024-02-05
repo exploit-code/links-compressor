@@ -1,7 +1,9 @@
+import { deleteCookie } from "../../utils/cookies";
 import {
   LOGIN_ERROR,
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
+  LOGOUT,
   SIGNUP_ERROR,
   SIGNUP_REQUEST,
   SIGNUP_SUCCESS,
@@ -67,6 +69,15 @@ export const authReducer = (state = initialState, action: TAuthUnionActions) => 
         loading: false,
         error: true,
         signup_error_detail: action.payload.detail,
+      };
+
+    case LOGOUT:
+      deleteCookie("access_token");
+      return {
+        ...state,
+        authorized: false,
+        loading: false,
+        error: false,
       };
 
     default:

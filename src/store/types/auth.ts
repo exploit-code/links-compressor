@@ -2,6 +2,7 @@ import {
   LOGIN_ERROR,
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
+  LOGOUT,
   SIGNUP_ERROR,
   SIGNUP_REQUEST,
   SIGNUP_SUCCESS,
@@ -63,10 +64,15 @@ export interface ISignupErrorAction {
   readonly payload: ILoginErrorResponse;
 }
 
+export interface ILogoutAction {
+  readonly type: typeof LOGOUT;
+}
+
 export type TAuthUnionActions =
   | ILoginRequestAction
   | ILoginSuccessAction
   | ILoginErrorAction
   | ISignupRequestAction
   | ISignupSuccessAction
-  | ISignupErrorAction;
+  | ISignupErrorAction
+  | ILogoutAction;
