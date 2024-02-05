@@ -9,7 +9,7 @@ import { Table } from "../../components/table/table";
 export const HomePage = () => {
   const dispatch = useDispatch();
   const { value, setValue, handleChange } = useFormData({});
-  const { error } = useSelector((store) => store.squeeze);
+  const { error, squeeze_error_detail } = useSelector((store) => store.squeeze);
 
   const handleLinkSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -31,7 +31,7 @@ export const HomePage = () => {
         />
         <Button type={"submit"} text={"Compress"} />
 
-        {error && <p className={styles.home__error}>Error</p>}
+        {error && <p className={styles.home__error}>{squeeze_error_detail}</p>}
       </form>
 
       <Table />

@@ -15,7 +15,6 @@ export interface IAuthState {
   readonly login_error_detail: string;
   readonly signup_error_detail: string;
   readonly access_token: string;
-  readonly token_type: string;
 }
 
 export interface IAuthRequestPayload {
@@ -56,7 +55,7 @@ export interface ISignupRequestAction {
 
 export interface ISignupSuccessAction {
   readonly type: typeof SIGNUP_SUCCESS;
-  readonly payload: any;
+  readonly payload: string;
 }
 
 export interface ISignupErrorAction {

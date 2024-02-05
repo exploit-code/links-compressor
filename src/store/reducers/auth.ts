@@ -16,7 +16,6 @@ const initialState: IAuthState = {
   signup_error_detail: "",
   login_error_detail: "",
   access_token: "",
-  token_type: "",
 };
 
 export const authReducer = (state = initialState, action: TAuthUnionActions) => {
@@ -36,7 +35,6 @@ export const authReducer = (state = initialState, action: TAuthUnionActions) => 
         login_error_detail: "",
         signup_error_detail: "",
         access_token: action.payload.access_token,
-        token_type: action.payload.token_type,
       };
 
     case LOGIN_ERROR:

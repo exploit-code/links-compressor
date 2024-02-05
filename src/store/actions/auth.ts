@@ -35,7 +35,7 @@ export const signupRequestAction = (): ISignupRequestAction => ({
   type: SIGNUP_REQUEST,
 });
 
-export const signupSuccessAction = (user: any): ISignupSuccessAction => ({
+export const signupSuccessAction = (user: string): ISignupSuccessAction => ({
   type: SIGNUP_SUCCESS,
   payload: user,
 });

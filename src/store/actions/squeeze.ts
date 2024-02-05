@@ -12,6 +12,7 @@ export const squeezeSuccessAction = (target: ISqueezeRequestPayload): ISqueezeSu
   type: SQUEEZY_SUCCESS,
   payload: target,
 });
+
 export const squeezeErrorAction = (detail: IErrorRequest): ISqueezeErrorAction => ({
   type: SQUEEZY_ERROR,
   payload: detail,

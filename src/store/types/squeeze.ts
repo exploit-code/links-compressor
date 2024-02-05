@@ -5,7 +5,7 @@ export interface ISqueezeState {
   squeeze: ISqueeze[];
   loading: boolean;
   error: boolean;
-  squeeze_error_detail: IErrorRequest;
+  squeeze_error_detail: string;
 }
 
 export interface ISqueezeRequestPayload {

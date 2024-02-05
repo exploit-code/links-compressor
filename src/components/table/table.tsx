@@ -9,6 +9,7 @@ import { ISortStatisticsProps } from "../../models";
 export const Table = () => {
   const dispatch = useDispatch();
   const { statistics, loading, x_total_count } = useSelector((store) => store.statistics);
+  const { squeeze } = useSelector((store) => store.squeeze);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [sortDirection, setSortDirection] = useState<ISortStatisticsProps>({
     short: "asc",
@@ -26,8 +27,8 @@ export const Table = () => {
     setCurrentPage(newPage);
   };
 
-  const handleSort = (field: string) => {
-    setSortDirection((prevDirection: any) => ({
+  const handleSort = (field: keyof ISortStatisticsProps) => {
+    setSortDirection((prevDirection: ISortStatisticsProps) => ({
       ...prevDirection,
       [field]: prevDirection[field] === "asc" ? "desc" : "asc",
     }));
@@ -35,7 +36,7 @@ export const Table = () => {
 
   useEffect(() => {
     dispatch(statisticsThunk(currentPage, itemsPerPage, sortDirection));
-  }, [currentPage, sortDirection, dispatch]);
+  }, [currentPage, sortDirection, dispatch, squeeze]);
 
   return (
     <article className={styles.table}>
