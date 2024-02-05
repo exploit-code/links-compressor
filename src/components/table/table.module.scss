@@ -1,9 +1,13 @@
 .table {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 8px;
   border: 1px solid var(--gray);
   border-radius: var(--radius);
+  position: relative;
+  min-height: 510px;
+  gap: 16px;
 
   &__wrap {
     width: 100%;
@@ -20,20 +24,30 @@
 
     & tr {
       display: grid;
-      grid-template-columns: 80px 1fr 80px;
+      grid-template-columns: 100px 1fr 100px;
       gap: 16px;
     }
 
     & th {
       font-size: 14px;
       text-align: center;
+      background-color: var(--white);
+      border-radius: var(--radius);
+      padding: 12px 6px;
+      height: max-content;
+      cursor: pointer;
+      transition: transform 0.1s linear;
+
+      &:active {
+        transform: scale(0.95);
+      }
     }
   }
 
   &__tbody {
     & tr {
       display: grid;
-      grid-template-columns: 80px 1fr 80px;
+      grid-template-columns: 100px 1fr 100px;
       gap: 16px;
       padding: 16px;
       border-radius: var(--radius);
@@ -41,6 +55,11 @@
 
       & > td:first-child {
         cursor: pointer;
+        transition: transform 0.1s linear;
+
+        &:active {
+          transform: scale(0.95);
+        }
       }
 
       &:nth-child(even) {
@@ -67,7 +86,41 @@
         word-break: break-all;
         font-size: 14px;
         text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+
+    &_button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 100px;
+      min-height: 40px;
+      cursor: pointer;
+      background-color: var(--blue);
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius);
+      transition: background-color 0.2s linear;
+
+      &:hover {
+        background-color: var(--blue-active);
+      }
+    }
+
+    &_pages {
+      min-width: 100px;
+      display: inline-flex;
+      justify-content: center;
     }
   }
 }

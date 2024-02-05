@@ -5,23 +5,17 @@ import { Button } from "../../components/button/button";
 import { useDispatch, useSelector } from "../../store/hooks";
 import { squeezeThunk } from "../../store/thunks/squeeze";
 import { Table } from "../../components/table/table";
-import { useEffect } from "react";
-import { statisticsThunk } from "../../store/thunks/statistics";
 
 export const HomePage = () => {
   const dispatch = useDispatch();
   const { value, setValue, handleChange } = useFormData({});
-  const { squeeze, error } = useSelector((store) => store.squeeze);
+  const { error } = useSelector((store) => store.squeeze);
 
   const handleLinkSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(squeezeThunk({ target: value.link }));
     setValue({ link: "" });
   };
-
-  useEffect(() => {
-    dispatch(statisticsThunk());
-  }, [dispatch, squeeze]);
 
   return (
     <section className={styles.home}>

@@ -12,3 +12,9 @@ export interface IErrorRequest {
     type: string;
   }>;
 }
+
+export interface ISortStatisticsProps {
+  counter: "asc" | "desc";
+  short: "asc" | "desc";
+  target: "asc" | "desc";
+}
