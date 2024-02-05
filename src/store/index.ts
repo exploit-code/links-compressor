@@ -6,7 +6,6 @@ import thunk from "redux-thunk";
 
 const persistConfig = {
   key: "links",
-  whitelist: ["locale", "auth"],
   storage: storageSession,
 };
 
